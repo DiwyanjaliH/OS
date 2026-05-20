@@ -28,7 +28,7 @@ document.addEventListener("keydown", function(e) {
 // TIMER SETTINGS
 // ==============================
 
-const TIMER_DURATION = 30 * 60; // 30 minutes
+const TIMER_DURATION = 60 * 60; // 30 minutes
 
 let endTime = localStorage.getItem("examEndTime");
 
