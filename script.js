@@ -28,8 +28,8 @@ document.addEventListener("keydown", function(e) {
 // TIMER SETTINGS
 // ==============================
 
-const TIMER_DURATION = 30 * 60; // 30 minutes
-
+//const TIMER_DURATION = 60 * 60; // 30 minutes
+const TIMER_DURATION = (1 * 60 * 60) + (5 * 60); // 1 hour 5 minutes
 let endTime = localStorage.getItem("examEndTime");
 
 if (!endTime) {
@@ -83,7 +83,7 @@ function updateTimer() {
   // ==============================
   // TIMER RUNNING
   // ==============================
-
+/*
   const minutes = Math.floor(
     (distance % (1000 * 60 * 60)) / (1000 * 60)
   );
@@ -95,7 +95,21 @@ function updateTimer() {
   timer.innerHTML =
     String(minutes).padStart(2, '0') + ":" +
     String(seconds).padStart(2, '0');
-}
+}*/
+  const hours = Math.floor(distance / (1000 * 60 * 60));
+
+const minutes = Math.floor(
+  (distance % (1000 * 60 * 60)) / (1000 * 60)
+);
+
+const seconds = Math.floor(
+  (distance % (1000 * 60)) / 1000
+);
+
+timer.innerHTML =
+  String(hours).padStart(2, '0') + ":" +
+  String(minutes).padStart(2, '0') + ":" +
+  String(seconds).padStart(2, '0');
 
 // ==============================
 // START TIMER
